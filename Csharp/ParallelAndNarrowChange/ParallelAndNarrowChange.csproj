@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Field\ImagineThisIsAClientInADifferentRepository.cs" />
+    <Compile Include="Field\IProduct.cs" />
+    <Compile Include="Field\Product.cs" />
     <Compile Include="Field\ShoppingCart.cs" />
     <Compile Include="Method\AnotherClientOfAuthenticator.cs" />
     <Compile Include="Method\AuthenticationService.cs" />

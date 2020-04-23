@@ -1,22 +1,19 @@
-﻿namespace ParallelAndNarrowChange.Field
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace ParallelAndNarrowChange.Field
 {
-    public class ShoppingCart{
-        private decimal price;
 
-        public decimal CalculateTotalPrice(){
-            return price;
-        }
+    public class ShoppingCart
+    {
+        private readonly List<IProduct> products = new List<IProduct>();
 
-        public bool HasDiscount(){
-            return price > 100;
-        }
+        public decimal CalculateTotalPrice() => products.Sum(p => p.Price);
 
-        public void Add(int aPrice){
-            this.price = aPrice;
-        }
+        public bool HasDiscount() => products.Any(p => p.Price > 100);
 
-        public int NumberOfProducts(){
-            return 1;
-        }
+        public void Add(IProduct p) => products.Add(p);
+
+        public int NumberOfProducts() => products.Count;
     }
 }
